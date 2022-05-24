@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "CreateQuiz";
+}
+
+<h1>CreateQuiz</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateQuizAction">
+            <div class="text-danger"></div>
+           
+            <div class="form-group">
+                <label class="control-label">Username</label>
+                <input class="form-control" name="Username" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Email</label>
+                <input class="form-control" name="Email" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Nombres des questions de type <b class="text-primary">Facile</b></label>
+                <input class="form-control" type="number" name="QuestionFacile" min="1" required/>
+            </div>
+             <div class="form-group">
+                <label class="control-label">Nombres des questions de type <b class="text-primary">Moyen</b></label>
+                <input class="form-control" type="number" name="QuestionMoyen" min="1" required/>
+            </div>
+             <div class="form-group">
+                <label class="control-label">Nombres des questions de type <b class="text-primary">Difficile</b></label>
+                <input class="form-control" type="number" name="QuestionDifficile" min="1" required/>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create quiz" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
